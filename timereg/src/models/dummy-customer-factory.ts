@@ -24,6 +24,6 @@ export class DummyCustomerFactory {
         );
 
         result.push(firstCustomer);
-        return firstCustomer;   
+        return result;   
     }
 }

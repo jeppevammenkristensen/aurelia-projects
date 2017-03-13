@@ -1,0 +1,88 @@
+<template>
+
+
+
+
+
+    <ai-dialog>
+        <form method="POST" role="form" submit.delegate="ok()" style="padding:50px;">
+            <ai-dialog-body>
+                <legend>Rediger</legend>
+                <div class="row">
+
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+
+
+                        <div class="form-group">
+                            <label for="inputFromHour">Fra time</label>
+                            <select name="" id="inputFromHour" class="form-control" value.bind="model.start.hour">
+                        <option value="" repeat.for="item of 24" model.bind="item" >${item | twoDigits}</option>
+                    </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputFromMinute">Fra Minutes</label>
+                            <select name="" id="inputFromMinute" class="form-control" value.bind="model.start.minute">
+                        <option value="" repeat.for="item of [00,15,30,45]" model.bind="item" >${item | twoDigits}</option>
+                    </select>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label for="inputToHour">Til time</label>
+                            <select name="" id="inputToHour" class="form-control" value.bind="model.end.hour">
+                        <option value="" repeat.for="item of 24" model.bind="item" >${item | twoDigits}</option>
+                    </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputToMinute">Til minutter</label>
+                            <select name="" id="inputToMinute" class="form-control" value.bind="model.end.minute">
+                        <option value="" repeat.for="item of [00,15,30,45]" model.bind="item" >${item | twoDigits}</option>
+                    </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                      <label for="inputCompany">Firma</label>
+                            <select name="" id="inputCompany" class="form-control" value.bind="model.customer">
+                                <option model.bind="null">Choose...</option>
+                                <option  repeat.for="customer of customers" model.bind="customer" >${customer.name}</option>
+                            </select>
+                </div>
+                <div class="form-group" show.bind="model.customer" >
+                      <label for="inputProject">Projekt</label>
+                            <select name="" id="inputProject" class="form-control" value.bind="model.project">
+                                <option model.bind="null">Choose...</option>
+                                <option  repeat.for="project of projects" model.bind="project" >${project.name}</option>
+                            </select>
+                </div>
+                 <div class="form-group" show.bind="model.project" >
+                      <label for="inputTask">Projekt</label>
+                            <select name="" id="inputTask" class="form-control" value.bind="model.task">
+                                <option model.bind="null">Choose...</option>
+                                <option  repeat.for="task of tasks" model.bind="task" >${task.name}</option>
+                            </select>
+                </div>
+
+                <div class="form-group">
+                    
+                    <input type="text" name="" id="inputDescription" class="form-control" value="" required="required" pattern="" title="">
+                    
+                </div>
+            </ai-dialog-body>
+            <ai-dialog-footer>
+
+                <button type="submit" class="btn btn-primary">Ok</button>
+                <button type="button" class="btn btn-danger" click.trigger="cancel()">Cancel</button>
+
+            </ai-dialog-footer>
+        </form>
+    </ai-dialog>
+
+
+
+</template>

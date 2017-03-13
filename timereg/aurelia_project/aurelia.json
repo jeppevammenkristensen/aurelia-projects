@@ -90,6 +90,7 @@
         "prepend": [
           "node_modules/bluebird/js/browser/bluebird.core.js",
           "node_modules/aurelia-cli/lib/resources/scripts/configure-bluebird.js",
+          "node_modules/whatwg-fetch/fetch.js",
           "node_modules/requirejs/require.js"
         ],
         "dependencies": [
@@ -142,7 +143,12 @@
           {
             "name": "aurelia-dialog",
             "main": "aurelia-dialog",
-            "path": "../node_modules/aurelia-dialog/dist/amd",
+            "path": "../node_modules/aurelia-dialog/dist/amd"
+          },
+          {
+            "name": "aurelia-validation",
+            "main": "aurelia-validation",
+            "path": "../node_modules/aurelia-validation/dist/amd",
             "resources": []
           }
         ]
